@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default margin-->
+    <dimen name="_no_space">0dp</dimen>
+    <dimen name="_0.25x_default_margin">@dimen/_2sdp</dimen>
+    <dimen name="_0.5x_default_margin">@dimen/_4sdp</dimen>
+    <dimen name="_0.75x_default_margin">@dimen/_6sdp</dimen>
+    <dimen name="_1x_default_margin">@dimen/_8sdp</dimen>
+    <dimen name="_1.25x_default_margin">@dimen/_10sdp</dimen>
+    <dimen name="_1.5x_default_margin">@dimen/_12sdp</dimen>
+    <dimen name="_2x_default_margin">@dimen/_16sdp</dimen>
+    <dimen name="_2.5x_default_margin">@dimen/_20sdp</dimen>
+    <dimen name="_2.75x_default_margin">@dimen/_22sdp</dimen>
+    <dimen name="_3x_default_margin">@dimen/_24sdp</dimen>
+    <dimen name="_3.5x_default_margin">@dimen/_28sdp</dimen>
+    <dimen name="_4x_default_margin">@dimen/_32sdp</dimen>
+    <dimen name="_4.5x_default_margin">@dimen/_36sdp</dimen>
+    <dimen name="_5x_default_margin">@dimen/_40sdp</dimen>
+    <dimen name="_6x_default_margin">@dimen/_48sdp</dimen>
+    <dimen name="_7x_default_margin">@dimen/_56sdp</dimen>
+
+</resources>

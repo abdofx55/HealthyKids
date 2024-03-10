@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name" translatable="false">HealthyKids</string>
+
+    <!-- General Configuration   -->
+    <string name="empty" translatable="false" />
+    <string name="field_required" translatable="false">هذا الحقل مطلوب</string>
+    <string name="loading" translatable="false">جاري التحميل</string>
+    <string name="next" translatable="false">التالي</string>
+    <string name="cancel" translatable="false">إلغاء</string>
+    <string name="done" translatable="false">حسنًا</string>
+    <string name="thank_you" translatable="false">شكرا لك</string>
+    <string name="apply" translatable="false">تطبيق</string>
+
+    <!-- Calculate Calories   -->
+    <string name="calories_title" translatable="false">احسب سعراتك</string>
+    <string name="calories_subtitle" translatable="false">احفظ السعرات الحرارية منخفضة وصحتك في القمة.</string>
+    <string name="calories_name" translatable="false">الإسم</string>
+    <string name="calories_sex" translatable="false">الجنس</string>
+    <string name="calories_age" translatable="false">العمر</string>
+    <string name="calories_height" translatable="false">الطول</string>
+    <string name="calories_weight" translatable="false">الوزن</string>
+    <string name="calories_activity" translatable="false">النشاط</string>
+
+</resources>

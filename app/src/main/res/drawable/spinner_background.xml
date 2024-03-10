@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+            <item>
+                <shape>
+                    <solid android:color="#FFFFFF" />
+                    <stroke android:width="@dimen/_1sdp" android:color="@color/lion_50" />
+                    <corners android:radius="@dimen/_0.5x_default_margin" />
+                    <padding android:bottom="@dimen/_4sdp" android:left="@dimen/_4sdp" android:right="@dimen/_4sdp" android:top="@dimen/_4sdp" />
+                </shape>
+            </item>
+            <item android:width="14dp" android:height="14dp" android:drawable="@drawable/ic_dropdown_arrow" android:gravity="end|center_vertical" android:right="@dimen/_0.75x_default_margin" />
+        </layer-list>
+    </item>
+</selector>
