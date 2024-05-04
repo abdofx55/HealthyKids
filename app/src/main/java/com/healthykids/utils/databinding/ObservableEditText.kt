@@ -1,9 +1,10 @@
-package com.eahs.utils.databinding
+package com.healthykids.utils.databinding
 
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableInt
-import com.eahs.R
-import com.eahs.utils.Message
+import com.example.healthykids.R
+import com.healthykids.utils.Message
+
 
 class ObservableEditText {
     val userInput = ObservableString()

@@ -1,19 +1,19 @@
 package com.healthykids.feature.calculate_calories.domain
 
 enum class WeightType {
-    None{
+    None {
         override fun getName() = "غير معروف"
     },
-    UnderWeight{
+    UnderWeight {
         override fun getName() = "منخفض الوزن"
     },
-    NormalWeight{
+    NormalWeight {
         override fun getName() = "وزن طبيعي"
     },
-    OverWeight{
+    OverWeight {
         override fun getName() = "زائد الوزن"
     },
-    Obesity{
+    Obesity {
         override fun getName() = "سمين"
     };
 

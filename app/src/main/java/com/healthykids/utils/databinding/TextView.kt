@@ -1,4 +1,4 @@
-package com.eahs.utils.databinding
+package com.healthykids.utils.databinding
 
 import android.graphics.Paint
 import android.widget.TextView

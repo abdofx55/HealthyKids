@@ -1,15 +1,14 @@
 package com.healthykids.feature.calculate_calories.presentation
 
 import androidx.lifecycle.viewModelScope
-import com.eahs.utils.databinding.ObservableEditText
-import com.eahs.utils.databinding.ObservableString
+import com.healthykids.utils.databinding.ObservableEditText
 import com.example.healthykids.R
 import com.healthykids.core.base.BaseCoroutineDispatchers
 import com.healthykids.core.base.BaseViewModel
 import com.healthykids.feature.calculate_calories.data.CalculateCaloriesRepository
-import com.healthykids.feature.calculate_calories.domain.ActivityType
+import com.healthykids.feature.calculate_calories.domain.Activity
 import com.healthykids.feature.calculate_calories.domain.Age
-import com.healthykids.feature.calculate_calories.domain.SexType
+import com.healthykids.feature.calculate_calories.domain.Sex
 import com.healthykids.feature.calculate_calories.domain.WeightType
 import com.healthykids.utils.Message
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -34,15 +33,16 @@ class CaloriesViewModel @Inject constructor(
         fetchAge()
         fetchActivityType()
     }
+
     private fun fetchSexType() {
         viewModelScope.launch {
-            pushSingle(CaloriesEvent.SexTypeFetched(repository.fetchSexType()))
+            pushSingle(CaloriesEvent.SexListFetched(repository.fetchSexType()))
         }
     }
 
     private fun fetchAge() {
         viewModelScope.launch {
-            pushSingle(CaloriesEvent.AgeFetched(repository.fetchAge()))
+            pushSingle(CaloriesEvent.AgeListFetched(repository.fetchAge()))
         }
     }
 
@@ -100,7 +100,7 @@ class CaloriesViewModel @Inject constructor(
                     Age.Twelve.getName() ->
                         calories = calculateCaloriesFromSex(1800, 2200, 1600, 2000)
                 }
-                pushSingle(CaloriesEvent.ShowResultForOverWeight(calories))
+                pushSingle(CaloriesEvent.ShowResultForOverWeight(weightType, calories))
             }
         }
     }
@@ -112,16 +112,16 @@ class CaloriesViewModel @Inject constructor(
         femaleHigh: Int
     ): Int {
         return when (sex.userInput.get()) {
-            SexType.Male.getName() -> calculateCaloriesFromActivity(maleLow, maleHigh)
-            SexType.Female.getName() -> calculateCaloriesFromActivity(femaleLow, femaleHigh)
+            Sex.Male.getName() -> calculateCaloriesFromActivity(maleLow, maleHigh)
+            Sex.Female.getName() -> calculateCaloriesFromActivity(femaleLow, femaleHigh)
             else -> 0
         }
     }
 
     private fun calculateCaloriesFromActivity(low: Int, high: Int): Int {
         return when (activity.userInput.get()) {
-            ActivityType.High.getName() -> low
-            ActivityType.Low.getName() -> high
+            Activity.High.getName() -> low
+            Activity.Low.getName() -> high
             else -> 0
         }
     }
@@ -134,7 +134,7 @@ class CaloriesViewModel @Inject constructor(
         val isWeightValid: Boolean
         val isActivityValid: Boolean
 
-        if (name.inputType.get().toString().isNotEmpty()) {
+        if (name.userInput.get().isNotEmpty()) {
             name.error.set(Message(R.string.empty))
             isNameValid = true
         } else {
@@ -142,7 +142,7 @@ class CaloriesViewModel @Inject constructor(
             name.error.set(Message(R.string.field_required))
         }
 
-        if (sex.inputType.get().toString().isNotEmpty()) {
+        if (sex.userInput.get().isNotEmpty()) {
             sex.error.set(Message(R.string.empty))
             isSexValid = true
         } else {
@@ -150,7 +150,7 @@ class CaloriesViewModel @Inject constructor(
             sex.error.set(Message(R.string.field_required))
         }
 
-        if (age.inputType.get().toString().isNotEmpty()) {
+        if (age.userInput.get().isNotEmpty()) {
             age.error.set(Message(R.string.empty))
             isAgeValid = true
         } else {
@@ -158,7 +158,7 @@ class CaloriesViewModel @Inject constructor(
             age.error.set(Message(R.string.field_required))
         }
 
-        if (height.inputType.get().toString().isNotEmpty()) {
+        if (height.userInput.get().isNotEmpty()) {
             height.error.set(Message(R.string.empty))
             isHeightValid = true
         } else {
@@ -166,7 +166,7 @@ class CaloriesViewModel @Inject constructor(
             height.error.set(Message(R.string.field_required))
         }
 
-        if (weight.inputType.get().toString().isNotEmpty()) {
+        if (weight.userInput.get().isNotEmpty()) {
             weight.error.set(Message(R.string.empty))
             isWeightValid = true
         } else {
@@ -174,7 +174,7 @@ class CaloriesViewModel @Inject constructor(
             weight.error.set(Message(R.string.field_required))
         }
 
-        if (activity.inputType.get().toString().isNotEmpty()) {
+        if (activity.userInput.get().isNotEmpty()) {
             activity.error.set(Message(R.string.empty))
             isActivityValid = true
         } else {
@@ -184,6 +184,18 @@ class CaloriesViewModel @Inject constructor(
 
 
         return isNameValid && isSexValid && isAgeValid && isHeightValid && isWeightValid && isActivityValid
+    }
+
+    fun onSexSelected(sex: Sex){
+        this.sex.userInput.set(sex.getName())
+    }
+
+    fun onAgeSelected(age: Age){
+        this.age.userInput.set(age.getName())
+    }
+
+    fun onActivitySelected(activity: Activity){
+        this.activity.userInput.set(activity.getName())
     }
 
 }

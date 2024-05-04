@@ -15,10 +15,49 @@
     <string name="calories_title" translatable="false">احسب سعراتك</string>
     <string name="calories_subtitle" translatable="false">احفظ السعرات الحرارية منخفضة وصحتك في القمة.</string>
     <string name="calories_name" translatable="false">الإسم</string>
+    <string name="calories_name_hint" translatable="false">أدخل الإسم</string>
     <string name="calories_sex" translatable="false">الجنس</string>
+    <string name="calories_sex_hint" translatable="false">اختر الجنس</string>
     <string name="calories_age" translatable="false">العمر</string>
+    <string name="calories_age_hint" translatable="false">اختر العمر</string>
     <string name="calories_height" translatable="false">الطول</string>
+    <string name="calories_height_hint" translatable="false">أدخل الطول (سم)</string>
     <string name="calories_weight" translatable="false">الوزن</string>
+    <string name="calories_weight_hint" translatable="false">أدخل الوزن (كجم)</string>
     <string name="calories_activity" translatable="false">النشاط</string>
+    <string name="calories_activity_hint" translatable="false">اختر النشاط</string>
+    <string name="calories_calculate_caloties" translatable="false">احسب سعراتك</string>
+
+    <!-- Success   -->
+    <string name="success_title" translatable="false">مبروك ، أنت لا تعاني من السمنة</string>
+
+    <!-- Result   -->
+    <string name="result_toolbar" translatable="false">النتائج</string>
+    <string name="result_bmi" translatable="false">مؤشر كتلة الجسم (BMI) : </string>
+    <string name="result_title" translatable="false">السعرات الحرارية</string>
+    <string name="result_meals" translatable="false">الوجبات المقترحة</string>
+    <string name="result_instructions" translatable="false">الإرشادات</string>
+
+    <!-- Meals   -->
+    <string name="meals_toolbar" translatable="false">الوجبات المقترحة</string>
+
+
+    <!-- Instructions   -->
+    <string name="instructions_toolbar" translatable="false">إرشادات</string>
+    <string name="instructions_title" translatable="false">إرشادات هامة يجب اتباعها لتحقيق أفضل نتيجة:</string>
+    <string name="instruction_text" translatable="false">1-	تنظيم وقت الوجبات.
+\n2-	تنظيم طريقة الأكل بحيث يتم البدء بتناول طبق السلطة، ثم البروتين، ثم طبق الخضار (كالبامية أو غيرها) وننتهي بالكربوهيدرات (كالأرز والمكرونة وغيرها).
+\n3-	النوم المنتظم لمدة لا تقل عن 8 ساعات.
+\n4-	الحرص على شرب من 2.5 لتر إلى 3 لتر يوميا من المياه.
+\n5-	التقليل من الفاكهة التالية (مانجو، بلح، عنب، تين).
+\n6-	يجب تناول الخضراوات بشكل يومي.
+\n7-	الحد المسموح من السكر هو معلقتين لليوم.
+\n8-	الالتزام بالرياضة على الأقل المشي 30 دقيقة يوميا.
+\n9-	عدم الأكل قبل الرياضة بمدة لا تقل عن نصف ساعة.
+\n10-	عدم الأكل بعد الرياضة بمدة لا تقل عن ساعة.
+\n١١- ممنوع تناول وجبات دسمة أو وجبات سريعة قبل التمرين.
+\n١٢- تناول سناك يحتوي على الكربوهيدرات قبل التمرين.
+\n١٣- الابتعاد عن الكربوهيدرات بعد التمرين و الاهتمام بتناول البروتين.</string>
+
 
 </resources>

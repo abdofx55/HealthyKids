@@ -1,25 +1,25 @@
 package com.healthykids.feature.calculate_calories.domain
 
 enum class Age {
-    Six{
+    Six {
         override fun getName() = "6"
     },
-    Seven{
+    Seven {
         override fun getName() = "7"
     },
-    Eight{
+    Eight {
         override fun getName() = "8"
     },
-    Nine{
+    Nine {
         override fun getName() = "9"
     },
-    Ten{
+    Ten {
         override fun getName() = "10"
     },
-    Eleven{
+    Eleven {
         override fun getName() = "11"
     },
-    Twelve{
+    Twelve {
         override fun getName() = "12"
     };
 

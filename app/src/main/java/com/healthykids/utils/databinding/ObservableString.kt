@@ -1,4 +1,4 @@
-package com.eahs.utils.databinding
+package com.healthykids.utils.databinding
 
 import androidx.databinding.Observable
 import androidx.databinding.ObservableField

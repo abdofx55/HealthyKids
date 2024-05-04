@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-</selector>
+    <item
+        android:bottom="35dp"
+        android:drawable="@drawable/ic_logo"
+        android:left="35dp"
+        android:right="35dp"
+        android:top="35dp" />
+</layer-list>

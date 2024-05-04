@@ -1,10 +1,10 @@
-package com.eahs.utils.databinding
+package com.healthykids.utils.databinding
 
 import androidx.annotation.StringRes
 import androidx.databinding.BindingAdapter
-import com.eahs.utils.Message
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.healthykids.utils.Message
 
 
 @BindingAdapter("app:errorText")

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/caloriesFragment">
+    <fragment
+        android:id="@+id/caloriesFragment"
+        android:name="com.healthykids.feature.calculate_calories.presentation.CaloriesFragment"
+        android:label="CaloriesFragment"
+        tools:layout="@layout/fragment_calories">
+        <action
+            android:id="@+id/action_caloriesFragment_to_successBottomSheet"
+            app:destination="@id/successBottomSheet"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/caloriesFragment" />
+        <action
+            android:id="@+id/action_caloriesFragment_to_resultBottomSheet"
+            app:destination="@id/resultFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/caloriesFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/successBottomSheet"
+        android:name="com.healthykids.feature.success.presentation.SuccessBottomSheet"
+        android:label="SuccessBottomSheet"
+        tools:layout="@layout/bottomsheet_success" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.healthykids.feature.result.presentation.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="weightType"
+            app:argType="com.healthykids.feature.calculate_calories.domain.WeightType" />
+        <argument
+            android:name="calories"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_resultFragment_to_mealsFragment"
+            app:destination="@id/mealsFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/resultFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_instructionsFragment"
+            app:destination="@id/instructionsFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealsFragment"
+        android:name="com.healthykids.feature.meals.presentation.MealsFragment"
+        android:label="MealsFragment"
+        tools:layout="@layout/fragment_meals">
+        <argument
+            android:name="calories"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionsFragment"
+        android:name="com.healthykids.feature.instructions.presentation.InstructionsFragment"
+        android:label="InstructionsFragment"
+        tools:layout="@layout/fragment_instructions" />
+</navigation>
