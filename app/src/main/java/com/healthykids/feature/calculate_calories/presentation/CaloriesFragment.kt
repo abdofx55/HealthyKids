@@ -85,7 +85,7 @@ class CaloriesFragment : BaseFragment<CaloriesEvent>() {
     }
 
     private fun navigateToSuccess() {
-        navigate(CaloriesFragmentDirections.actionCaloriesFragmentToSuccessBottomSheet())
+        navigate(CaloriesFragmentDirections.actionCaloriesFragmentToSuccessFragment())
     }
 
     private fun navigateToResult(weightType: WeightType, calories: Int) {

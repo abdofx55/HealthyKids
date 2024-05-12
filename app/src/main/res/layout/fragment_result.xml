@@ -14,125 +14,171 @@
         android:layout_height="match_parent"
         android:layoutDirection="rtl">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/toolbar2"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_1x_default_margin"
-            android:gravity="center_vertical"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@color/hippie_green"
+            android:layoutDirection="ltr"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginStart="@dimen/_1.5x_default_margin"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/btn_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_1x_default_margin"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginEnd="@dimen/_2x_default_margin"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:padding="@dimen/_1x_default_margin"
-                android:src="@drawable/ic_arrow_black" />
+                android:rotationY="180"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
 
-            <TextView
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5x_default_margin"
+            app:cardCornerRadius="@dimen/_2x_default_margin"
+            app:cardElevation="@dimen/_0.5x_default_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:strokeColor="@color/hippie_green"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/regular_400"
-                android:layout_marginStart="@dimen/_1x_default_margin"
-                android:text="@string/result_toolbar"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_11sdp" />
+                android:layout_height="wrap_content">
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/hippie_green"
+                    android:fontFamily="@font/bold_700"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/_3x_default_margin"
+                    android:paddingVertical="@dimen/_0.25x_default_margin"
+                    android:text="@string/result_title"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_100sdp"
-            android:fontFamily="@font/medium_500"
-            android:text="@string/result_bmi"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_12ssp"
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView2"
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_marginTop="@dimen/_3x_default_margin"
+            app:cardCornerRadius="@dimen/_2x_default_margin"
+            app:cardElevation="@dimen/_0.75x_default_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_2x_default_margin"
-            android:fontFamily="@font/bold_700"
-            android:text="@{viewModel.bmi}"
-            android:textColor="@color/red"
-            android:textSize="@dimen/_20ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView1"
-            tools:text="وزن زائد" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/medium_500"
-            android:text="@string/result_title"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_12ssp"
-            android:layout_marginTop="@dimen/_60sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView2"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginStart="@dimen/_1x_default_margin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_success_right" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_2x_default_margin"
-            android:fontFamily="@font/bold_700"
-            android:text="@{String.valueOf(viewModel.calories)}"
-            android:textColor="@color/red"
-            android:textSize="@dimen/_26ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11"
-            tools:text="1200" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView3"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginEnd="@dimen/_1x_default_margin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_success_left" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.6"
+                    android:fontFamily="@font/bold_700"
+                    android:gravity="center"
+                    android:text="@{String.valueOf(viewModel.calories)}"
+                    android:textColor="@color/hippie_green"
+                    android:textSize="@dimen/_42ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/appCompatImageView3"
+                    app:layout_constraintStart_toEndOf="@+id/appCompatImageView2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="1200" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
 
         <LinearLayout
             android:id="@+id/layout_buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_2x_default_margin"
-            android:layout_marginBottom="@dimen/_4x_default_margin"
+            android:layout_marginBottom="@dimen/_3x_default_margin"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.4">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_cancel"
-                style="@style/OutlinedButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="@dimen/_1x_default_margin"
-                android:layout_weight="1"
-                android:minHeight="@dimen/_37sdp"
-                android:onClick="@{() -> viewModel.navigateToMeals()}"
-                android:text="@string/result_meals"
-                app:strokeColor="@color/red_50" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_confirm"
                 style="@style/SolidButton"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_100sdp"
                 android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/_3x_default_margin"
+                android:layout_marginStart="@dimen/_3x_default_margin"
                 android:layout_weight="1"
-                android:minHeight="@dimen/_37sdp"
+                android:elevation="@dimen/_0.75x_default_margin"
+                android:onClick="@{() -> viewModel.navigateToMeals()}"
+                android:text="@string/result_meals" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/SolidButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/_3x_default_margin"
+                android:layout_marginStart="@dimen/_3x_default_margin"
+                android:layout_marginEnd="@dimen/_3x_default_margin"
+                android:layout_weight="1"
+                android:elevation="@dimen/_0.75x_default_margin"
                 android:onClick="@{() -> viewModel.navigateToInstructions()}"
                 android:text="@string/result_instructions" />
+
 
         </LinearLayout>
 

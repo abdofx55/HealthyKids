@@ -10,5 +10,6 @@ sealed class CaloriesEvent {
     data class AgeListFetched(val data: MutableList<Age>) : CaloriesEvent()
     data class ActivityTypeFetched(val data: MutableList<Activity>) : CaloriesEvent()
     data object ShowResultForNormalWeight : CaloriesEvent()
-    data class ShowResultForOverWeight(val weightType: WeightType, val calories: Int) : CaloriesEvent()
+    data class ShowResultForOverWeight(val weightType: WeightType, val calories: Int) :
+        CaloriesEvent()
 }

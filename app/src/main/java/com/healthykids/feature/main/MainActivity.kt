@@ -3,7 +3,9 @@ package com.healthykids.feature.main
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.healthykids.R
 import com.example.healthykids.databinding.ActivityMainBinding
 import com.healthykids.core.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,6 +29,7 @@ class MainActivity : BaseActivity<MainEvent>() {
     }
 
     private fun setupViews() {
+        window.statusBarColor = ContextCompat.getColor(this, R.color.hippie_green)
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
     }
 

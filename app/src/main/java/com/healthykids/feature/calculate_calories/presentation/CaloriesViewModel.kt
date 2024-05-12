@@ -1,7 +1,6 @@
 package com.healthykids.feature.calculate_calories.presentation
 
 import androidx.lifecycle.viewModelScope
-import com.healthykids.utils.databinding.ObservableEditText
 import com.example.healthykids.R
 import com.healthykids.core.base.BaseCoroutineDispatchers
 import com.healthykids.core.base.BaseViewModel
@@ -11,6 +10,7 @@ import com.healthykids.feature.calculate_calories.domain.Age
 import com.healthykids.feature.calculate_calories.domain.Sex
 import com.healthykids.feature.calculate_calories.domain.WeightType
 import com.healthykids.utils.Message
+import com.healthykids.utils.databinding.ObservableEditText
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -186,15 +186,15 @@ class CaloriesViewModel @Inject constructor(
         return isNameValid && isSexValid && isAgeValid && isHeightValid && isWeightValid && isActivityValid
     }
 
-    fun onSexSelected(sex: Sex){
+    fun onSexSelected(sex: Sex) {
         this.sex.userInput.set(sex.getName())
     }
 
-    fun onAgeSelected(age: Age){
+    fun onAgeSelected(age: Age) {
         this.age.userInput.set(age.getName())
     }
 
-    fun onActivitySelected(activity: Activity){
+    fun onActivitySelected(activity: Activity) {
         this.activity.userInput.set(activity.getName())
     }
 

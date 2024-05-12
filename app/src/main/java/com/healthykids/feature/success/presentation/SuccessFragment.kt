@@ -1,16 +1,17 @@
-package com.healthykids.feature.instructions.presentation
+package com.healthykids.feature.success.presentation
 
 import android.os.Bundle
 import android.view.View
-import com.example.healthykids.databinding.FragmentInstructionsBinding
+import com.example.healthykids.databinding.FragmentSuccessBinding
 import com.healthykids.core.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
-class InstructionsFragment : BaseFragment<Any>() {
 
-    override val mTag = "InstructionsFragment"
-    override val mBinding by lazy { FragmentInstructionsBinding.inflate(layoutInflater) }
+@AndroidEntryPoint
+class SuccessFragment : BaseFragment<Any>() {
+
+    override val mTag = "SuccessFragment"
+    override val mBinding by lazy { FragmentSuccessBinding.inflate(layoutInflater) }
 
     override fun onMyViewCreated(view: View, savedInstanceState: Bundle?) {
         setUpViews()
@@ -21,4 +22,5 @@ class InstructionsFragment : BaseFragment<Any>() {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
     }
+
 }

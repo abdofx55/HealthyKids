@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/caloriesFragment">
+    app:startDestination="@id/splashScreenFragment">
     <fragment
         android:id="@+id/caloriesFragment"
         android:name="com.healthykids.feature.calculate_calories.presentation.CaloriesFragment"
         android:label="CaloriesFragment"
         tools:layout="@layout/fragment_calories">
         <action
-            android:id="@+id/action_caloriesFragment_to_successBottomSheet"
-            app:destination="@id/successBottomSheet"
+            android:id="@+id/action_caloriesFragment_to_successFragment"
+            app:destination="@id/successFragment"
             app:launchSingleTop="true"
             app:popUpTo="@id/caloriesFragment" />
         <action
@@ -20,11 +20,11 @@
             app:launchSingleTop="true"
             app:popUpTo="@id/caloriesFragment" />
     </fragment>
-    <dialog
-        android:id="@+id/successBottomSheet"
-        android:name="com.healthykids.feature.success.presentation.SuccessBottomSheet"
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.healthykids.feature.success.presentation.SuccessFragment"
         android:label="SuccessBottomSheet"
-        tools:layout="@layout/bottomsheet_success" />
+        tools:layout="@layout/fragment_success" />
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.healthykids.feature.result.presentation.ResultFragment"
@@ -61,4 +61,13 @@
         android:name="com.healthykids.feature.instructions.presentation.InstructionsFragment"
         android:label="InstructionsFragment"
         tools:layout="@layout/fragment_instructions" />
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.healthykids.feature.splash_screen.presentation.SplashScreenFragment"
+        android:label="SplashScreenFragment"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_caloriesFragment"
+            app:destination="@id/caloriesFragment" />
+    </fragment>
 </navigation>

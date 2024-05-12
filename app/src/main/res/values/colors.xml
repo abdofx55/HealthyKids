@@ -25,5 +25,9 @@
     <color name="cyan_blue_25">#4394DB</color>
     <color name="bluish">#337AB7</color>
     <color name="green">#00AB11</color>
+    <color name="dark_green">#385622</color>
     <color name="black_cow">#494949</color>
+
+    <color name="hippie_green">#548235</color>
+
 </resources>
