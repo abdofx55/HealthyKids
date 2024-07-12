@@ -27,7 +27,6 @@ class MealsFragment : BaseFragment<Any>() {
             }
 
             pdfView.fromAsset("${args.calories}.pdf")
-                .pages(0, 2, 1, 3, 3, 3) // all pages are displayed by default
                 .enableSwipe(true) // allows to block changing pages using swipe
                 .swipeHorizontal(false).enableDoubletap(true).defaultPage(0)
                 // called on single tap, return true if handled, false to toggle scroll handle visibility
