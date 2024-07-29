@@ -120,8 +120,8 @@ class CaloriesViewModel @Inject constructor(
 
     private fun calculateCaloriesFromActivity(low: Int, high: Int): Int {
         return when (activity.userInput.get()) {
-            Activity.High.getName() -> low
-            Activity.Low.getName() -> high
+            Activity.Low.getName() -> low
+            Activity.High.getName() -> high
             else -> 0
         }
     }
